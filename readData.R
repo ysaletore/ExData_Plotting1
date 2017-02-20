@@ -1,8 +1,11 @@
 # read in all data
-data <- read.delim('household_power_consumption.txt', sep=';', header <- T, stringsAsFactors = F)
-data$Date = as.Date(data$Date, format = "%d/%m/%Y")
-data$Time = strptime(data$Time, format = "%H:%M:%S")
-data$Global_active_power = as.numeric(data$Global_active_power)
+data <- read.delim('household_power_consumption.txt', sep = ';', header = T, stringsAsFactors = F)
+data$Date <- as.Date(data$Date, format = "%d/%m/%Y")
+data$Time <- strptime(data$Time, format = "%H:%M:%S")
+data$Global_active_power <- as.numeric(data$Global_active_power)
+data$Sub_metering_1 <- as.numeric(data$Sub_metering_1)
+data$Sub_metering_2 <- as.numeric(data$Sub_metering_2)
+data$Sub_metering_3 <- as.numeric(data$Sub_metering_3)
 
 
 # filter data
@@ -16,4 +19,4 @@ filt <- apply(data, 1, function(X) {
   }
 })
 
-data = data[filt,]
+data <- data[filt,]
