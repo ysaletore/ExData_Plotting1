@@ -8,6 +8,7 @@ plot3 <- function() {
        ylab = "Energy sub metering",
        xaxt = 'n', xlab = '', col = "black"
   )
+  
   lines(x = data2$UnixTime, y = data$Sub_metering_2, col = "red")
   lines(x = data2$UnixTime, y = data$Sub_metering_3, col = "blue")
   legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),

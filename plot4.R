@@ -3,7 +3,7 @@ if(!exists("plot3")) {
   source('plot3.R')
 }
 
-plot2b <- function() {
+plot4b <- function() {
   plot(x = data2$UnixTime, y = data$Voltage, type = 'l',
        ylab = "Voltage",
        xaxt = 'n', xlab = 'datetime', col = "black"
@@ -13,7 +13,7 @@ plot2b <- function() {
        labels = c("Thu", "Fri", "Sat"))
 }
 
-plot4a <- function() {
+plot4d <- function() {
   plot(x = data2$UnixTime, y = data$Global_reactive_power, type = 'l',
        ylab = "Global_reactive_power",
        xaxt = 'n', xlab = 'datetime', col = "black"
@@ -26,9 +26,9 @@ plot4a <- function() {
 plot4 <- function() {
   par(mfrow = c(2, 2))
   plot2('')
-  plot2b()
+  plot4b()
   plot3()
-  plot4a()
+  plot4d()
 }
 
 plot4()
